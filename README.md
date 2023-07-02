@@ -1,10 +1,10 @@
-# Manga Library Website :open_book:
+# Anime Stream :desktop_computer:
 
 # Overview
-Welcome to the Manga Library Website, a platform created to make manga reading easier and more fun. Our website is created with modern web technologies like React, JavaScript, CSS, and HTML to provide a responsive and engaging user interface.
+Welcome to Anime Stream! This platform is designed to make anime watching easier and more enjoyable. Our website is created with modern web technologies like React, JavaScript, CSS, and HTML to provide a responsive and engaging user interface.
 
 # Features
-:books: Manga Collection
+:tv: Watchlist
 
 :star2: Ratings and Reviews
 
