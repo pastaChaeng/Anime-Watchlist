@@ -1,0 +1,16 @@
+{
+  "name": "manga-library",
+  "version": "1.0.0",
+  "description": "Welcome to the Manga Library Website, a platform created to make manga reading easier and more fun. Our website is created with modern web technologies like React, JavaScript, CSS, and HTML to provide a responsive and engaging user interface.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}
