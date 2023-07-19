@@ -1,17 +1,12 @@
-// Import necessary dependencies
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Topairing from "./components/Topairing";
-import VideoPage from "./components/VideoPage";
+import React from 'react';
+import './App.css';
+import Topairing from './Pages/Topairing';
 
 function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Topairing} />
-        <Route path="/video/:animeId" component={VideoPage} />
-      </Switch>
-    </Router>
+    return (
+        <div className='w-full bg-[#192026] m-auto'>
+      <Topairing/>
+    </div>
   );
 }
 
