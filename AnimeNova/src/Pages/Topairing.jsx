@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import reactLogo from "../assets/react.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,7 +15,7 @@ function Topairing() {
   const [notFound, setNotFound] = useState(false);
   //useEffect hook to fetch data from the API
 
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -121,7 +120,7 @@ function Topairing() {
                 <a href="#" className="text-blue-500 hover:text-blue-600">Home</a>
               </li>
               <li>
-              <a href="/recent-episodes"  className="hover:text-blue-600">Recent Episodes</a>
+                <a href="/recent-episodes" className="hover:text-blue-600">Recent Episodes</a>
               </li>
               <li>
                 <a href="/recent-episodes" className="hover:text-blue-600">Streaming Links</a>
@@ -175,14 +174,14 @@ function Topairing() {
           {/* slider banner  */}
           <Slider {...banner}>
             <div className="relative">
-              
+
               <img
                 src={Demonslayer}
                 className="w-full h-[400px] border-none opacity-30"
                 alt="Image"
               />
               <div className="absolute top-1/2 left-4  ">
-              <h2 className="text-white text-4xl font-Poppins font-bold">
+                <h2 className="text-white text-4xl font-Poppins font-bold">
                   Demon Slayer the Movie: <br />
                   Mugen Train
                 </h2>
