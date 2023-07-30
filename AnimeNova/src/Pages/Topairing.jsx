@@ -91,10 +91,12 @@ function Topairing() {
   const banner = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    autoplay: true,       
+    autoplaySpeed: 2500,   
   };
   //settings for the slider top airing
   const topairing = {
@@ -109,24 +111,29 @@ function Topairing() {
   const Demonslayer = "https://wallpapercave.com/wp/wp7836447.png";
   const Bleach = "https://images.alphacoders.com/118/1184490.jpg";
   const wotakoi = "https://wallpaperaccess.com/full/2891515.png";
+
+  //bg image
+  const backgroundImageURL = "https://i.pinimg.com/236x/39/8e/32/398e320d5890613f9e3bb024a931ddbd.jpg";
+
   return (
     <div className=" ">
-      <header className="flex justify-between items-center m-0 bg-[#192026] p-4">
-        <div className="flex justify-center items-center gap-4">
-          <img src={"https://cdn-icons-png.flaticon.com/128/2314/2314797.png"} className="App-logo w-8 h-8" alt="logo" />
+    <div className="bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImageURL})` }}>
+      <header className="flex justify-between items-center m-0 bg-[#192026] p-4 bg-transparent sticky top-0 hover:bg-blue/500">
+        <div className="flex justify-center items-center gap-x-12">
+          <img src={"/src/assets/AN_logo.png"} className="App-logo w-full h-8" alt="logo" />
           <nav>
-            <ul className="flex gap-5 font-Poppins font-[400] text-white">
+            <ul className="flex gap-x-24 font-Poppins font-[400] text-white">
               <li className=" ">
-                <a href="#" className="text-blue-500 hover:text-blue-600">Home</a>
+                <a href="#" className="text-blue-300">Home</a>
               </li>
               <li>
-                <a href="/recent-episodes" className="hover:text-blue-600">Recent Episodes</a>
+                <a href="/recent-episodes" className="hover:text-blue-300">Recent</a>
               </li>
               <li>
-                <a href="/recent-episodes" className="hover:text-blue-600">Streaming Links</a>
+                <a href="/recent-episodes" className="hover:text-blue-300">Streaming Links</a>
               </li>
               <li>
-                <a href="/recent-episodes" className="hover:text-blue-600">Genre</a>
+                <a href="/recent-episodes" className="hover:text-blue-300">Genre</a>
               </li>
             </ul>
           </nav>
@@ -169,10 +176,12 @@ function Topairing() {
           </div>
         </form>
       </header>
-      <div className="px-5">
+   
+      
+      <div className="px-5 pt-96">
         <div>
           {/* slider banner  */}
-          <Slider {...banner}>
+          <Slider {...banner} >
             <div className="relative">
 
               <img
@@ -214,16 +223,18 @@ function Topairing() {
             </div>
           </Slider>
         </div>
-        <h1 className="font-Poppins font-bold text-[900] text-white text-[2.55rem]">
+        </div>
+        </div>
+        <h1 className="font-Poppins font-bold text-[900] text-white text-[2.55rem] px-6">
           Top Airing
         </h1>
-        <Slider {...topairing}>
+        <Slider  className="px-6" {...topairing}>
           {notFound ? (
             <p>No anime found.</p>
           ) : (
             apiData.results &&
             apiData.results.map((item) => (
-              <div className="text-white w-full p-2 " key={item.id}>
+              <div className="text-white w-full p-2" key={item.id}>
                 {/* Display the relevant data from the API */}
                 <img
                   className="w-full rounded-lg h-[300px]"
@@ -235,7 +246,8 @@ function Topairing() {
             ))
           )}
         </Slider>
-      </div>
+      
+
     </div>
   );
 }
