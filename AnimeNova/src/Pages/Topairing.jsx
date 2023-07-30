@@ -3,19 +3,16 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 function Topairing() {
-
-
-
-  //useState hook to store the search query
+  // useState hook to store the search query
   const [searchQuery, setSearchQuery] = useState("");
-  //useState hook to store the API response
+  // useState hook to store the API response
   const [apiData, setApiData] = useState([]);
-  //useState hook to store whether the API returned a 404
+  // useState hook to store whether the API returned a 404
   const [notFound, setNotFound] = useState(false);
-  //useEffect hook to fetch data from the API
 
-
+  // useEffect hook to fetch data from the API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -64,7 +61,6 @@ function Topairing() {
             setApiData([]);
           }
         }
-        // If the API returns a 404, set the notFound state to true
       } catch (err) {
         console.error(err);
         setApiData([]);
@@ -87,7 +83,8 @@ function Topairing() {
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
-  //settings for the slider banner
+
+  // Settings for the slider banner
   const banner = {
     dots: false,
     infinite: true,
@@ -95,10 +92,11 @@ function Topairing() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,       
-    autoplaySpeed: 2500,   
+    autoplay: true,
+    autoplaySpeed: 2500,
   };
-  //settings for the slider top airing
+
+  // Settings for the slider top airing
   const topairing = {
     dots: false,
     infinite: true,
@@ -107,83 +105,99 @@ function Topairing() {
     slidesToScroll: 6,
     arrows: false,
   };
-  //images for the slider banner
-  const Demonslayer = "https://wallpapercave.com/wp/wp7836447.png";
-  const Bleach = "https://images.alphacoders.com/118/1184490.jpg";
-  const wotakoi = "https://wallpaperaccess.com/full/2891515.png";
 
-  //bg image
-  const backgroundImageURL = "https://i.pinimg.com/236x/39/8e/32/398e320d5890613f9e3bb024a931ddbd.jpg";
+  // Images for the slider banner
+  const Demonslayer =
+    "https://wallpapercave.com/wp/wp7836447.png";
+  const Bleach =
+    "https://images.alphacoders.com/118/1184490.jpg";
+  const wotakoi =
+    "https://wallpaperaccess.com/full/2891515.png";
+
 
   return (
     <div className=" ">
-    <div className="bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImageURL})` }}>
-      <header className="flex justify-between items-center m-0 bg-[#192026] p-4 bg-transparent sticky top-0 hover:bg-blue/500">
-        <div className="flex justify-center items-center gap-x-12">
-          <img src={"/src/assets/AN_logo.png"} className="App-logo w-full h-8" alt="logo" />
-          <nav>
-            <ul className="flex gap-x-24 font-Poppins font-[400] text-white">
-              <li className=" ">
-                <a href="#" className="text-blue-300">Home</a>
-              </li>
-              <li>
-                <a href="/recent-episodes" className="hover:text-blue-300">Recent</a>
-              </li>
-              <li>
-                <a href="/recent-episodes" className="hover:text-blue-300">Streaming Links</a>
-              </li>
-              <li>
-                <a href="/recent-episodes" className="hover:text-blue-300">Genre</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div></div>
-        <form>
-          <label
-            htmlFor="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-          >
-            Search
-          </label>
-          <div className="relative  ">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
-            </div>
-            <input
-              type="search"
-              id="default-search"
-              className="font-Poppins   p-4 pl-10 text-sm text-white  rounded-lg bg-[#374151]  focus:outline-none  focus:text-white dark:focus:bg-gray-800 dark:focus:text-white dark:bg-gray-700 dark:text-gray-300  "
-              placeholder="Search Anime"
-              required
-              value={searchQuery}
-              onChange={handleSearch}
+        <header className="flex flex-col md:flex-row justify-between items-center m-0 p-4 lg:p-8 sticky top-0 backdrop-blur">
+          <div className="flex justify-center items-center gap-x-12">
+            <img
+              src={"/src/assets/AN_logo.png"}
+              className="App-logo w-50 h-8"
+              alt="logo"
             />
+            <nav>
+              <ul className="flex gap-x-24 font-Poppins font-[400] text-white">
+                <li className=" ">
+                  <a href="#" className="text-red-500">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-red-500">
+                    Recent
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/recent-episodes"
+                    className="hover:text-red-500"
+                  >
+                    Streaming Links
+                  </a>
+                </li>
+                <li>
+                  <a href="/recent-episodes" className="hover:text-red-500">
+                    Genre
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
-        </form>
-      </header>
-   
-      
-      <div className="px-5 pt-96">
-        <div>
-          {/* slider banner  */}
-          <Slider {...banner} >
-            <div className="relative">
+          <div></div>
+          <form>
+            <label
+              htmlFor="default-search"
+              className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >
+              Search
+            </label>
+            <div className="relative  ">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg
+                  aria-hidden="true"
+                  className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                className="font-Poppins   p-4 pl-10 text-sm text-white  rounded-lg bg-[#374151] 
+                 focus:outline-none  focus:text-white dark:focus:bg-gray-800 dark:focus:text-white dark:bg-gray-700 dark:text-gray-300  "
+                placeholder="Search Anime"
+                required
+                value={searchQuery}
+                onChange={handleSearch}
+              />
+            </div>
+          </form>
+        </header>
+       
 
+      <div className="px-5">
+        <div>
+          {/* Slider banner */}
+          <Slider {...banner}>
+            <div className="relative">
               <img
                 src={Demonslayer}
                 className="w-full h-[400px] border-none opacity-30"
@@ -200,7 +214,11 @@ function Topairing() {
               </div>
             </div>
             <div className="relative">
-              <img src={Bleach} className=" w-full h-[400px] opacity-30" alt="Image" />
+              <img
+                src={Bleach}
+                className=" w-full h-[400px] opacity-30"
+                alt="Image"
+              />
               <div className="absolute top-1/2 left-4  ">
                 <h2 className=" text-white text-4xl font-bold z-10 font-Poppins">
                   Bleach
@@ -211,7 +229,11 @@ function Topairing() {
               </div>
             </div>
             <div className="relative">
-              <img src={wotakoi} className=" w-full h-[400px]  opacity-30" alt="Image" />
+              <img
+                src={wotakoi}
+                className=" w-full h-[400px]  opacity-30"
+                alt="Image"
+              />
               <div className="absolute top-1/2 left-4  ">
                 <h2 className=" text-white text-4xl font-bold z-10 font-Poppins">
                   wotakoi : love is hard <br /> for otaku
@@ -222,32 +244,29 @@ function Topairing() {
               </div>
             </div>
           </Slider>
+          <h1 className="font-Poppins font-bold text-[900] text-white text-[2.55rem] px-2 pt-8">
+            Top Airing
+          </h1>
+          <Slider {...topairing}>
+            {notFound ? (
+              <p>No anime found.</p>
+            ) : (
+              apiData.results &&
+              apiData.results.map((item) => (
+                <div className="text-white w-full p-2" key={item.id}>
+                  {/* Display the relevant data from the API */}
+                  <img
+                    className="w-full rounded-lg h-[300px] object-cover"
+                    src={item.image}
+                    alt={item.title}
+                  />
+                  <p className="font-Poppins text-sm">{item.title}</p>
+                </div>
+              ))
+            )}
+          </Slider>
         </div>
-        </div>
-        </div>
-        <h1 className="font-Poppins font-bold text-[900] text-white text-[2.55rem] px-6">
-          Top Airing
-        </h1>
-        <Slider  className="px-6" {...topairing}>
-          {notFound ? (
-            <p>No anime found.</p>
-          ) : (
-            apiData.results &&
-            apiData.results.map((item) => (
-              <div className="text-white w-full p-2" key={item.id}>
-                {/* Display the relevant data from the API */}
-                <img
-                  className="w-full rounded-lg h-[300px]"
-                  src={item.image}
-                  alt={item.title}
-                />
-                <p className="font-Poppins text-sm">{item.title}</p>
-              </div>
-            ))
-          )}
-        </Slider>
-      
-
+      </div>
     </div>
   );
 }
