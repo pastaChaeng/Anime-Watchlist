@@ -1,8 +1,6 @@
 # Anime Stream :desktop_computer:
-
-# Overview
-Welcome to Anime Stream! This platform is designed to make anime watching easier and more enjoyable. Our website is created with modern web technologies like React, JavaScript, CSS, and HTML to provide a responsive and engaging user interface.
-
+ 
+Welcome to Anime Stream! Simplifying and enhancing your anime-watching pleasure. Our site is crafted using cutting-edge web tech such as; React, JavaScript, CSS, and HTML, all boosted by Tailwind CSS and API integration, ensuring a responsive and immersive user experience.
 # Features
 :tv: Watchlist
 
